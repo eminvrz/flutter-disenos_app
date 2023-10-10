@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 class HeaderCuadrado extends StatelessWidget {
+  const HeaderCuadrado({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      color: Color(0xff615AAB),
+      color: const Color(0xff615AAB),
     );
   }
 }
 
 class HeaderBorderRedondeados extends StatelessWidget {
+  const HeaderBorderRedondeados({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,8 @@ class HeaderBorderRedondeados extends StatelessWidget {
 }
 
 class HeaderDiagonal extends StatelessWidget {
+  const HeaderDiagonal({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +60,7 @@ class _HeaderDiagonalPainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // stroke para los bordes y fill para cuando lo queremos rellenar
     paint.strokeWidth = 2; 
 
-    final path = new Path();
+    final path = Path();
 
     //Dibujar con el path y el lapiz o paint
     path.moveTo(0, size.height * 0.35);
@@ -74,7 +79,7 @@ class _HeaderDiagonalPainter extends CustomPainter {
 }
 
 class HeaderTriangular extends StatelessWidget {
-
+  const HeaderTriangular({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -100,7 +105,7 @@ class _HeaderTriangularPainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // stroke para los bordes y fill para cuando lo queremos rellenar
     paint.strokeWidth = 21; 
 
-    final path = new Path();
+    final path = Path();
 
     //Dibujar con el path y el lapiz o paint
     path.lineTo(size.width, size.height );
@@ -118,7 +123,7 @@ class _HeaderTriangularPainter extends CustomPainter {
 }
 
 class HeaderPico extends StatelessWidget {
-
+  const HeaderPico({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

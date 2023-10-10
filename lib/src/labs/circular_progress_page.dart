@@ -20,7 +20,7 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
   @override
   void initState() {
 
-    controller = AnimationController(vsync: this, duration: Duration(milliseconds: 800));
+    controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 800));
 
     controller.addListener(() { 
 
@@ -37,7 +37,7 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
 
   @override
   void dispose() {
-    // TODO: implement dispose
+   
     controller.dispose();
   }
 
