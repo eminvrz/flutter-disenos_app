@@ -35,6 +35,7 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
     super.initState();
   }
 
+  // ignore: must_call_super
   @override
   void dispose() {
    
@@ -45,7 +46,6 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton:  FloatingActionButton(
-        child: Icon(Icons.refresh),
         backgroundColor: Colors.pink,
         onPressed: (){
 
@@ -58,10 +58,12 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
 
           controller.forward(from: 0.0);
 
-          print('porcentaje = ${nuevoPorcentaje}');
+          // ignore: avoid_print
+          print('porcentaje = $nuevoPorcentaje');
 
           setState(() {});
         },
+        child: const Icon(Icons.refresh),
       ),
       body: Center(
         child: Container(
@@ -81,6 +83,7 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
 
 class _MiRadialProgress extends CustomPainter{
 
+    // ignore: prefer_typing_uninitialized_variables
     final porcentaje;
 
   _MiRadialProgress( this.porcentaje );

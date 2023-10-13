@@ -37,7 +37,7 @@ class HeaderDiagonal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0xff615AAB),
@@ -82,7 +82,7 @@ class HeaderTriangular extends StatelessWidget {
   const HeaderTriangular({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0xff615AAB),
@@ -126,7 +126,7 @@ class HeaderPico extends StatelessWidget {
   const HeaderPico({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0xff615AAB),
@@ -149,7 +149,7 @@ class _HeaderPicoPainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // stroke para los bordes y fill para cuando lo queremos rellenar
     paint.strokeWidth = 21; 
 
-    final path = new Path();
+    final path = Path();
 
     //Dibujar con el path y el lapiz o paint
     path.lineTo(0, size.height * 0.20);
@@ -169,10 +169,12 @@ class _HeaderPicoPainter extends CustomPainter {
 }
 
 class HeaderCurvo extends StatelessWidget {
+  const HeaderCurvo({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0xff615AAB),
@@ -195,7 +197,7 @@ class _HeaderCurvoPainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // stroke para los bordes y fill para cuando lo queremos rellenar
     paint.strokeWidth = 21; 
 
-    final path = new Path();
+    final path = Path();
 
     //Dibujar con el path y el lapiz o paint
     path.lineTo(0, size.height * 0.20);
@@ -214,10 +216,12 @@ class _HeaderCurvoPainter extends CustomPainter {
 }
 
 class HeaderWave extends StatelessWidget {
+  const HeaderWave({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0xff615AAB),
@@ -240,7 +244,7 @@ class _HeaderWavePainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // stroke para los bordes y fill para cuando lo queremos rellenar
     paint.strokeWidth = 21; 
 
-    final path = new Path();
+    final path = Path();
 
     //Dibujar con el path y el lapiz o paint
        path.moveTo(0, size.height * 0.75);
@@ -269,10 +273,12 @@ class _HeaderWavePainter extends CustomPainter {
 }
 
 class HeaderWaveGradient extends StatelessWidget {
+  const HeaderWaveGradient({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       // color: Color(0xff615AAB),
@@ -318,7 +324,7 @@ class _HeaderWaveGradientPainter extends CustomPainter {
     paint.style = PaintingStyle.fill; // stroke para los bordes y fill para cuando lo queremos rellenar
     paint.strokeWidth = 21; 
 
-    final path = new Path();
+    final path = Path();
 
     //Dibujar con el path y el lapiz o paint
       //  path.moveTo(0, size.height * 0.75);

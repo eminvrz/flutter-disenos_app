@@ -1,3 +1,4 @@
+// ignore: library_prefixes
 import 'dart:math' as Math;
 
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class CuadradoAnimado extends StatefulWidget {
   @override
   State<CuadradoAnimado> createState() => _CuadradoAnimadoState();
 }
-                                                                // Se usa para animaciones
+ // Se usa para animaciones
 class _CuadradoAnimadoState extends State<CuadradoAnimado> with SingleTickerProviderStateMixin{
 
   // Es el controlador, que va a permitir que avanze, retrocesa, regrese etc...
@@ -60,6 +61,7 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado> with SingleTickerProv
 
     controller.addListener(() {
       
+      // ignore: avoid_print
       print('status ${controller.status}');
 
       if( controller.status == AnimationStatus.completed) {
@@ -89,7 +91,7 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado> with SingleTickerProv
 
     return AnimatedBuilder(
       animation: controller, 
-      child: _Rectangulo(),
+      child: const _Rectangulo(),
       builder: ( BuildContext context, Widget ? childRectangulo){
 
       // print('Opacidad ${opacidad.value}');
@@ -116,7 +118,7 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado> with SingleTickerProv
 
 
 class _Rectangulo extends StatelessWidget {
-  const _Rectangulo({super.key});
+  const _Rectangulo();
 
     @override
     Widget build(BuildContext context) {

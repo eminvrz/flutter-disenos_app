@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class CuadradoAnimadoPage extends StatelessWidget {
+  const CuadradoAnimadoPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +59,7 @@ class _CuadradoAnimadoState extends State<_CuadradoAnimado> with SingleTickerPro
 
     controller.addListener(() {
       if( controller.status == AnimationStatus.completed){
+        // ignore: avoid_print
         print('completado');
         controller.reset();
       }

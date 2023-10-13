@@ -52,7 +52,7 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
 class CustomRadialProgress extends StatelessWidget {
 
   final Color color;
-   CustomRadialProgress({super.key, 
+   const CustomRadialProgress({super.key, 
     required this.porcentaje,
     required this.color
   });
@@ -61,13 +61,13 @@ class CustomRadialProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 200,
       height: 200,
       // color: Colors.red,
       child: RadialProgress( 
       porcentaje: porcentaje, 
-      colorPrimario: this.color,
+      colorPrimario: color,
       colorSecundario: Colors.grey,
       grosorPrimario: 15,
       grosorSecundario: 10,

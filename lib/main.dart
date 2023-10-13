@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 // import 'package:disenos_app/src/pages/animaciones_pages.dart';
 // import 'package:disenos_app/src/pages/headers_pages.dart';
 
-  void main() => runApp(MyApp());
+  void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
