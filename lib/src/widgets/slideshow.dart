@@ -118,6 +118,7 @@ class _Slides extends StatefulWidget {
 
   final List<Widget> slides;
 
+   // ignore: prefer_const_constructors_in_immutables
    _Slides(this.slides);
 
   @override

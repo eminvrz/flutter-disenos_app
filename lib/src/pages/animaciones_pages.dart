@@ -38,7 +38,6 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado> with SingleTickerProv
 
   @override
   void initState() {
-    // TODO: implement initState
 
     controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 4000));
 
@@ -77,7 +76,6 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado> with SingleTickerProv
 
   @override
   void dispose() {
-    // TODO: implement dispose
     controller.dispose();
     super.dispose();
   }

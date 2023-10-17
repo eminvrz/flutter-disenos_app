@@ -38,7 +38,7 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
   // ignore: must_call_super
   @override
   void dispose() {
-   
+    super.dispose();
     controller.dispose();
   }
 
