@@ -1,30 +1,83 @@
+// ignore_for_file: avoid_print
+
 import 'package:disenos_app/src/widgets/pinterest_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class PinterestPage extends StatelessWidget {
+
   const PinterestPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+  final widthScreen = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: PinterestMenu(),
-        ),
+      body: Stack(
+        children: [
+          PinterestGrid(),
+          _PinterestMenuLocation(),
+        ],
       ),
     );
   }
 }
- 
-class PinterestGrid extends StatelessWidget {
-  final List<int> items = List.generate(200, (index) => index);
 
-  PinterestGrid({super.key});
+class _PinterestMenuLocation extends StatelessWidget {
+  
+
+  @override
+  Widget build(BuildContext context) {
+  final widthScreen = MediaQuery.of(context).size.width;
+    return Positioned(
+      bottom: 30,
+      child: SizedBox(
+        width: widthScreen,
+        child: Align(
+          child: PinterestMenu(),
+        ),
+      )
+    );
+  }
+}
  
+ // Stateful para usar el Listener y saber cuando el usuario desplazara hacia abajo para desaparecer el menu 
+class PinterestGrid extends StatefulWidget {
+
+  @override
+  State<PinterestGrid> createState() => _PinterestGridState();
+}
+
+class _PinterestGridState extends State<PinterestGrid> {
+
+  final List<int> items = List.generate(200, (index) => index);
+  ScrollController controller = ScrollController();
+  double scrollAnterior = 0;
+  @override
+  void initState() {
+
+    controller.addListener(() {
+      //print(' ScrollListener ${controller.offset}'); // offset para que nos muestre los puntos que vamos desplazando
+      if ( controller.offset >scrollAnterior ){
+        print('Ocultar Menu');
+      } else {
+        print('Mostrar Menu');
+      }
+      scrollAnterior = controller.offset;
+    });
+    super.initState();
+  }
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.custom(
+      controller: controller,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       gridDelegate: SliverWovenGridDelegate.count(
         crossAxisCount: 2,
